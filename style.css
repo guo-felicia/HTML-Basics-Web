@@ -1,0 +1,86 @@
+p {
+ font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
+ font-size: 12pt;
+ line-height: 16pt;
+ text-align: justify;
+ /* When the same property is defined multiple times,
+ the last defined value overrides all previous values */
+ color: red;
+ color: rgb(0,255,0);
+ color: #CC0000;
+}
+
+h1, h2 {
+ font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
+ color: steelblue;
+ font-weight: bold;
+ text-transform: uppercase;
+ letter-spacing: 4px;
+}
+
+/* What happens if we only use the
+selector .classA here? */
+div, .classA {
+ width: 50%;
+ padding-left: 50px;
+ padding-right: 50px;
+ padding-top: 10px;
+ padding-bottom: 10px;
+ margin-bottom: 50px;
+ margin-left: auto;
+ margin-right: auto;
+ border-top: 2px dashed steelblue;
+}
+
+/* Notice that font-family is an inherited property;
+we don't need to explicitly define the property
+for descendant elements to be displayed the same way */
+ol, ul {
+ font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
+}
+
+ul li {
+ /* the width property is always relative
+ to the width of the parent element! */
+ width: 75%;
+ list-style-type: none;
+ text-indent: none;
+ border-bottom: 1px solid black;
+ margin-bottom: 10px;
+ font-style: italic;
+}
+
+ol li {
+ /* Nothing happens! Why?
+ The inspector tells us this
+ is an invalid property value! */
+ font-style: underline;
+}
+
+a:link, a:visited {
+ color: steelblue;
+ text-decoration: none;
+}
+
+a:hover {
+ text-decoration: underline;
+}
+
+.classA {
+ background-color: #e6f2ff;
+}
+
+/* What happens when we define a
+more specific CSS rule? */
+#elementA {
+ background-color: #FFFFFF;
+ border: none;
+ /* Notice this doesn't override the text color!
+ Why not? */
+ color: #000000;
+}
+
+/* We would have to do something like this: */
+#elementA p {
+ color: #000000;
+}
